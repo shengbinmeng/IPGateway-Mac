@@ -1,4 +1,4 @@
-ipgateway-mac
+IPGateway
 =============
 
 IPGateway for Mac.
