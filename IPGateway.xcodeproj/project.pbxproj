@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E80F229914C15B5000E3B2FA /* IPGateway.help in Resources */ = {isa = PBXBuildFile; fileRef = E80F229814C15B5000E3B2FA /* IPGateway.help */; };
+		E8D631BE14BEF5A300497732 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D631BD14BEF5A300497732 /* Cocoa.framework */; };
+		E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D631C614BEF5A300497732 /* InfoPlist.strings */; };
+		E8D631CA14BEF5A300497732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D631C914BEF5A300497732 /* main.m */; };
+		E8D631CE14BEF5A300497732 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E8D631CC14BEF5A300497732 /* Credits.rtf */; };
+		E8D631D114BEF5A300497732 /* IPGWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */; };
+		E8D631D414BEF5A300497732 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D631D214BEF5A300497732 /* MainMenu.xib */; };
+		E8F9B30714DBBBD9002EAFD0 /* ipgw.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E80F229814C15B5000E3B2FA /* IPGateway.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IPGateway.help; sourceTree = SOURCE_ROOT; };
+		E8D631B914BEF5A300497732 /* IPGateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPGateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8D631BD14BEF5A300497732 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E8D631C014BEF5A300497732 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E8D631C114BEF5A300497732 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E8D631C214BEF5A300497732 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E8D631C514BEF5A300497732 /* IPGateway-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IPGateway-Info.plist"; sourceTree = "<group>"; };
+		E8D631C714BEF5A300497732 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E8D631C914BEF5A300497732 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E8D631CB14BEF5A300497732 /* IPGateway-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IPGateway-Prefix.pch"; sourceTree = "<group>"; };
+		E8D631CD14BEF5A300497732 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E8D631CF14BEF5A300497732 /* IPGWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPGWAppDelegate.h; sourceTree = "<group>"; };
+		E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPGWAppDelegate.m; sourceTree = "<group>"; };
+		E8D631D314BEF5A300497732 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ipgw.icns; path = ../ipgw.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E8D631B614BEF5A300497732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D631BE14BEF5A300497732 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E8D631AE14BEF5A300497732 = {
+			isa = PBXGroup;
+			children = (
+				E8D631C314BEF5A300497732 /* IPGateway */,
+				E8D631BC14BEF5A300497732 /* Frameworks */,
+				E8D631BA14BEF5A300497732 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E8D631BA14BEF5A300497732 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8D631B914BEF5A300497732 /* IPGateway.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8D631BC14BEF5A300497732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8D631BD14BEF5A300497732 /* Cocoa.framework */,
+				E8D631BF14BEF5A300497732 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E8D631BF14BEF5A300497732 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8D631C014BEF5A300497732 /* AppKit.framework */,
+				E8D631C114BEF5A300497732 /* CoreData.framework */,
+				E8D631C214BEF5A300497732 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E8D631C314BEF5A300497732 /* IPGateway */ = {
+			isa = PBXGroup;
+			children = (
+				E8D631CF14BEF5A300497732 /* IPGWAppDelegate.h */,
+				E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */,
+				E8D631D214BEF5A300497732 /* MainMenu.xib */,
+				E8D631C414BEF5A300497732 /* Supporting Files */,
+			);
+			path = IPGateway;
+			sourceTree = "<group>";
+		};
+		E8D631C414BEF5A300497732 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */,
+				E80F229814C15B5000E3B2FA /* IPGateway.help */,
+				E8D631C514BEF5A300497732 /* IPGateway-Info.plist */,
+				E8D631C614BEF5A300497732 /* InfoPlist.strings */,
+				E8D631C914BEF5A300497732 /* main.m */,
+				E8D631CB14BEF5A300497732 /* IPGateway-Prefix.pch */,
+				E8D631CC14BEF5A300497732 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8D631B814BEF5A300497732 /* IPGateway */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E8D631D714BEF5A300497732 /* Build configuration list for PBXNativeTarget "IPGateway" */;
+			buildPhases = (
+				E8D631B514BEF5A300497732 /* Sources */,
+				E8D631B614BEF5A300497732 /* Frameworks */,
+				E8D631B714BEF5A300497732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IPGateway;
+			productName = IPGateway;
+			productReference = E8D631B914BEF5A300497732 /* IPGateway.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8D631B014BEF5A300497732 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Peking University";
+			};
+			buildConfigurationList = E8D631B314BEF5A300497732 /* Build configuration list for PBXProject "IPGateway" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				English,
+				zh_CN,
+			);
+			mainGroup = E8D631AE14BEF5A300497732;
+			productRefGroup = E8D631BA14BEF5A300497732 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8D631B814BEF5A300497732 /* IPGateway */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E8D631B714BEF5A300497732 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */,
+				E8D631CE14BEF5A300497732 /* Credits.rtf in Resources */,
+				E8D631D414BEF5A300497732 /* MainMenu.xib in Resources */,
+				E80F229914C15B5000E3B2FA /* IPGateway.help in Resources */,
+				E8F9B30714DBBBD9002EAFD0 /* ipgw.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8D631B514BEF5A300497732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8D631CA14BEF5A300497732 /* main.m in Sources */,
+				E8D631D114BEF5A300497732 /* IPGWAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E8D631C614BEF5A300497732 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D631C714BEF5A300497732 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E8D631CC14BEF5A300497732 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D631CD14BEF5A300497732 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E8D631D214BEF5A300497732 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E8D631D314BEF5A300497732 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E8D631D514BEF5A300497732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E8D631D614BEF5A300497732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E8D631D814BEF5A300497732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPGateway/IPGateway-Prefix.pch";
+				INFOPLIST_FILE = "IPGateway/IPGateway-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E8D631D914BEF5A300497732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IPGateway/IPGateway-Prefix.pch";
+				INFOPLIST_FILE = "IPGateway/IPGateway-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E8D631B314BEF5A300497732 /* Build configuration list for PBXProject "IPGateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D631D514BEF5A300497732 /* Debug */,
+				E8D631D614BEF5A300497732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E8D631D714BEF5A300497732 /* Build configuration list for PBXNativeTarget "IPGateway" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8D631D814BEF5A300497732 /* Debug */,
+				E8D631D914BEF5A300497732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8D631B014BEF5A300497732 /* Project object */;
+}
