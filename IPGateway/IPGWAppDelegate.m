@@ -36,7 +36,9 @@
     [useridTextField setStringValue:[[NSUserDefaults standardUserDefaults] valueForKey:@"rememberedUser"]];
     [passwordTextField setStringValue:[[NSUserDefaults standardUserDefaults] valueForKey:@"rememberedPwd"]];
     
-    [self loginButtonPressed:nil];
+    if ([useridTextField stringValue] != nil && [[useridTextField stringValue] isEqualToString:@""] == NO && [passwordTextField stringValue] != nil && [[passwordTextField stringValue] isEqualToString:@""] == NO) {
+        [self loginButtonPressed:nil];
+    }
 }
 
 - (NSString*) findItem:(NSString *) item ofInfomation:(NSString*) information {
