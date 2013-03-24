@@ -35,6 +35,8 @@
     [self.logoutButton setEnabled:NO];
     [useridTextField setStringValue:[[NSUserDefaults standardUserDefaults] valueForKey:@"rememberedUser"]];
     [passwordTextField setStringValue:[[NSUserDefaults standardUserDefaults] valueForKey:@"rememberedPwd"]];
+    
+    [self loginButtonPressed:nil];
 }
 
 - (NSString*) findItem:(NSString *) item ofInfomation:(NSString*) information {
