@@ -41,21 +41,39 @@
     }
 }
 
+
 - (NSString*) findItem:(NSString *) item ofInfomation:(NSString*) information {
     NSString *infoItem = @"unknown";
     if ([item isEqualToString:@"BALANCE"]) {
         NSRange range1 = [information rangeOfString:@"BALANCE="];
         NSRange range2 = [information rangeOfString:@"IP="];
-        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length))];
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
+    } else if ([item isEqualToString:@"SCOPE"]) {
+        NSRange range1 = [information rangeOfString:@"SCOPE="];
+        NSRange range2 = [information rangeOfString:@"DEFICIT="];
+        if (range2.length == 0) {
+            range2 = [information rangeOfString:@"CONNECTIONS="];
+        }
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
+    } else if ([item isEqualToString:@"FR_DESC_EN"]) {
+        NSRange range1 = [information rangeOfString:@"FR_DESC_EN="];
+        NSRange range2 = [information rangeOfString:@"FR_TIME="];
+        if (range2.length == 0) {
+            range2 = [information rangeOfString:@"SCOPE="];
+        }
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
+    } else if ([item isEqualToString:@"FR_TIME"]) {
+        NSRange range1 = [information rangeOfString:@"FR_TIME="];
+        NSRange range2 = [information rangeOfString:@"SCOPE="];
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
     } else if ([item isEqualToString:@"IP"]) {
         NSRange range1 = [information rangeOfString:@"IP="];
         NSRange range2 = [information rangeOfString:@"MESSAGE="];
-        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length))];
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
     }
     
     return infoItem;
 }
-
 
 /*
  https://its.pku.edu.cn:5428/ipgatewayofpku?uid=1101111141&password=pas&operation=connect&range=2&timeout=2
@@ -193,10 +211,23 @@
             NSRange range = [content rangeOfString:@"用&nbsp;户&nbsp;名："];
             NSString *name = [content substringWithRange:NSMakeRange(range.location + range.length + 9, 12)];
             name = [name substringToIndex:[name rangeOfString:@"</td>"].location];
+            
             NSString *IP = [self findItem:@"IP" ofInfomation:information];
+            NSString *scope = [self findItem:@"SCOPE" ofInfomation:information];
             NSString *balance = [self findItem:@"BALANCE" ofInfomation:information];
-            balance = [balance stringByAppendingString:@" RMB"];
-            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nAccount Balance: %@", name,IP,balance]];
+            NSString *fr_desc = [self findItem:@"FR_DESC_EN" ofInfomation:information];
+            NSString *status = @"Normal";
+            if (![fr_desc isEqualToString:@"no"]) {
+                NSString *fr_time = [self findItem:@"FR_TIME" ofInfomation:information];
+                status = [NSString stringWithFormat:@"%@ \n%@: %@ hours", fr_desc, @"Time Used", fr_time];
+            }
+            if ([scope isEqualToString:@"international"]) {
+                scope = @"Global Paid";
+            } else {
+                scope = @"CERNET Free";
+            }
+
+            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nConnection Scope: %@ \nAccount Status: %@\nAccount Balance: %@", name, IP, scope, status, balance]];
             
             if ([rememberSwitch state] == NSOnState) {
                 [[NSUserDefaults standardUserDefaults] setValue:username forKey:@"rememberedUser"];
