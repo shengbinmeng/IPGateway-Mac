@@ -9,8 +9,6 @@
 #import "IPGWAppDelegate.h"
 
 @implementation IPGWAppDelegate {
-    NSString *username;
-    NSString *password;
     NSMutableData* receivedData;
     NSURLConnection * connection;
 }
@@ -88,15 +86,11 @@
     [passwordTextField resignFirstResponder];
     [messageTextView setStringValue:@"logging in..."];
     
-    username = [[self useridTextField] stringValue];
-    password = [[self passwordTextField] stringValue];
-    if (username == nil) username = @"";
-    if (password == nil) password = @"";
     
     NSString *errorMessage = nil;
-    if ([username isEqualToString:@""]) {
+    if ([[[self useridTextField] stringValue] isEqualToString:@""]) {
         errorMessage = @"user ID required! - Please input.";
-    } else if ([password isEqualToString:@""]) {
+    } else if ([[[self passwordTextField] stringValue] isEqualToString:@""]) {
         errorMessage = @"password requered! - Please input.";
     }
     
@@ -107,7 +101,7 @@
     
     if ([logoutButton isEnabled]) {
         NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease]; 
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnect&range=%d&timeout=3", username, password, 2]]];  
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnect&range=%d&timeout=3", [[self useridTextField] stringValue], [[self passwordTextField] stringValue], 2]]];  
         [request setHTTPMethod:@"GET"];
         [request setTimeoutInterval:15];
         [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -117,7 +111,7 @@
     if ([globalSwitch state] == NSOnState) {
         range = 1; //1 for fee; can't be others
     }
-    NSString *requestString = [NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=connect&range=%d&timeout=3", username, password, range];
+    NSString *requestString = [NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=connect&range=%d&timeout=3", [[self useridTextField] stringValue], [[self passwordTextField] stringValue], range];
 #ifdef DEBUG
     NSLog(@"%@", requestString);
 #endif
@@ -141,7 +135,7 @@
     [messageTextView setStringValue:@"logging out ..."];
     
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease]; 
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnect&range=%d&timeout=3", username, password, 2]]];  
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnect&range=%d&timeout=3", [[self useridTextField] stringValue], [[self passwordTextField] stringValue], 2]]];  
     [request setHTTPMethod:@"GET"];
     [request setTimeoutInterval:15];
     NSData *returnedData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -227,11 +221,11 @@
                 scope = @"CERNET Free";
             }
 
-            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nConnection Scope: %@ \nAccount Status: %@\nAccount Balance: %@", name, IP, scope, status, balance]];
+            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nConnection Scope: %@ \nAccount Status: %@\nAccount Balance: %@ RMB", name, IP, scope, status, balance]];
             
             if ([rememberSwitch state] == NSOnState) {
-                [[NSUserDefaults standardUserDefaults] setValue:username forKey:@"rememberedUser"];
-                [[NSUserDefaults standardUserDefaults] setValue:password forKey:@"rememberedPwd"];
+                [[NSUserDefaults standardUserDefaults] setValue:[[self useridTextField] stringValue] forKey:@"rememberedUser"];
+                [[NSUserDefaults standardUserDefaults] setValue:[[self passwordTextField] stringValue] forKey:@"rememberedPwd"];
             }
             [logoutButton setEnabled:YES];
         } else if([[information substringToIndex:10] isEqualToString:@"SUCCESS=NO"]){ 
@@ -276,7 +270,7 @@
         case NSAlertFirstButtonReturn:
         {
             // "Yes" pressed
-            NSString *requestString = [NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnectall&range=%d&timeout=3", username, password, 2];
+            NSString *requestString = [NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnectall&range=%d&timeout=3", [[self useridTextField] stringValue], [[self passwordTextField] stringValue], 2];
 #ifdef DEBUG
             NSLog(@"%@", requestString);
 #endif
