@@ -233,7 +233,7 @@
             NSString *reason = [information substringFromIndex:(range.location + range.length)];
             if ([reason rangeOfString:@"户名错"].length != 0 || [reason rangeOfString:@"口令错误"].length != 0) {
                 [messageTextView setStringValue:@"login failed! - User ID or password error, please check."];
-            }else if ([reason rangeOfString:@"不能登录网关"].length != 0) {
+            } else if ([reason rangeOfString:@"不能登录网关"].length != 0) {
                 NSRange range = [reason rangeOfString:@"是服务器"];
                 NSString *IP = @"";
                 if(range.length != 0) IP = [NSString stringWithFormat:@"<%@>",[reason substringToIndex:range.location]];
