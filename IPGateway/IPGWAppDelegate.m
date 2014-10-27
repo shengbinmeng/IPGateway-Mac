@@ -164,6 +164,38 @@
 
 }
 
+- (IBAction)disconnectAll:(id)sender {
+    [messageTextView setStringValue:@"closing all ..."];
+    
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://its.pku.edu.cn:5428/ipgatewayofpku?uid=%@&password=%@&operation=disconnectall&range=%d&timeout=3", [[self useridTextField] stringValue], [[self passwordTextField] stringValue], 2]]];
+    [request setHTTPMethod:@"GET"];
+    [request setTimeoutInterval:15];
+    NSData *returnedData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    if (returnedData) {
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *content = [[[NSString alloc] initWithData:returnedData encoding:enc] autorelease];
+#ifdef DEBUG
+        NSLog(@"***************\n%@",content);
+#endif
+        NSRange range = [content rangeOfString:@"<!--IPGWCLIENT_START SUCCESS=YES"];
+        if(range.length != 0) {
+            [messageTextView setStringValue:@"disconnect all success! - All the connections of your account are closed now."];
+            [logoutButton setEnabled:NO];
+            if ([rememberSwitch state] == NSOffState) {
+                [useridTextField setStringValue:@""];
+                [passwordTextField setStringValue:@""];
+                [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"rememberedUser"];
+                [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:@"rememberedPwd"];
+            }
+        } else {
+            [messageTextView setStringValue:@"somethin wrong! - Sorry."];
+        }
+    } else {
+        [messageTextView setStringValue:@"somethin wrong! - Sorry."];
+    }
+}
+
 
 #pragma mark - connection delegate
 
