@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E80F229914C15B5000E3B2FA /* IPGateway.help in Resources */ = {isa = PBXBuildFile; fileRef = E80F229814C15B5000E3B2FA /* IPGateway.help */; };
 		E8D631BE14BEF5A300497732 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D631BD14BEF5A300497732 /* Cocoa.framework */; };
 		E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D631C614BEF5A300497732 /* InfoPlist.strings */; };
 		E8D631CA14BEF5A300497732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D631C914BEF5A300497732 /* main.m */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E80F229814C15B5000E3B2FA /* IPGateway.help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IPGateway.help; sourceTree = SOURCE_ROOT; };
 		E8D631B914BEF5A300497732 /* IPGateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPGateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D631BD14BEF5A300497732 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E8D631C014BEF5A300497732 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -98,7 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */,
-				E80F229814C15B5000E3B2FA /* IPGateway.help */,
 				E8D631C514BEF5A300497732 /* IPGateway-Info.plist */,
 				E8D631C614BEF5A300497732 /* InfoPlist.strings */,
 				E8D631C914BEF5A300497732 /* main.m */,
@@ -169,7 +166,6 @@
 				E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */,
 				E8D631CE14BEF5A300497732 /* Credits.rtf in Resources */,
 				E8D631D414BEF5A300497732 /* MainMenu.xib in Resources */,
-				E80F229914C15B5000E3B2FA /* IPGateway.help in Resources */,
 				E8F9B30714DBBBD9002EAFD0 /* ipgw.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
