@@ -68,6 +68,10 @@
         NSRange range1 = [information rangeOfString:@"IP="];
         NSRange range2 = [information rangeOfString:@"MESSAGE="];
         infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
+    } else if ([item isEqualToString:@"CONNECTIONS"]) {
+        NSRange range1 = [information rangeOfString:@"CONNECTIONS="];
+        NSRange range2 = [information rangeOfString:@"BALANCE="];
+        infoItem = [information substringWithRange:NSMakeRange(range1.location + range1.length, range2.location - (range1.location + range1.length) - 1)];
     }
     
     return infoItem;
@@ -242,6 +246,8 @@
             NSString *scope = [self findItem:@"SCOPE" ofInfomation:information];
             NSString *balance = [self findItem:@"BALANCE" ofInfomation:information];
             NSString *fr_desc = [self findItem:@"FR_DESC_EN" ofInfomation:information];
+            NSString *connections = [self findItem:@"CONNECTIONS" ofInfomation:information];
+
             NSString *status = @"Normal";
             if (![fr_desc isEqualToString:@"no"]) {
                 NSString *fr_time = [self findItem:@"FR_TIME" ofInfomation:information];
@@ -253,7 +259,7 @@
                 scope = @"CERNET Free";
             }
 
-            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nConnection Scope: %@ \nAccount Status: %@\nAccount Balance: %@ RMB", name, IP, scope, status, balance]];
+            [messageTextView setStringValue:[NSString stringWithFormat:@"login success! - You are online now. \n\nUser Name: %@ \nIP Location: %@ \nConnection Scope: %@ \nAccount Status: %@\nAccount Balance: %@ RMB \nAccount Connections: %@", name, IP, scope, status, balance, connections]];
             
             if ([rememberSwitch state] == NSOnState) {
                 [[NSUserDefaults standardUserDefaults] setValue:[[self useridTextField] stringValue] forKey:@"rememberedUser"];
