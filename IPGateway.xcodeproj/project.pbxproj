@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CEE81951B284E8400EA3D62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CEE81941B284E8400EA3D62 /* Images.xcassets */; };
 		E8D631BE14BEF5A300497732 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D631BD14BEF5A300497732 /* Cocoa.framework */; };
 		E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E8D631C614BEF5A300497732 /* InfoPlist.strings */; };
 		E8D631CA14BEF5A300497732 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D631C914BEF5A300497732 /* main.m */; };
 		E8D631CE14BEF5A300497732 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E8D631CC14BEF5A300497732 /* Credits.rtf */; };
 		E8D631D114BEF5A300497732 /* IPGWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */; };
 		E8D631D414BEF5A300497732 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8D631D214BEF5A300497732 /* MainMenu.xib */; };
-		E8F9B30714DBBBD9002EAFD0 /* ipgw.icns in Resources */ = {isa = PBXBuildFile; fileRef = E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CEE81931B284D8E00EA3D62 /* IPGateway.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = IPGateway.entitlements; sourceTree = "<group>"; };
+		6CEE81941B284E8400EA3D62 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E8D631B914BEF5A300497732 /* IPGateway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPGateway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D631BD14BEF5A300497732 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E8D631C014BEF5A300497732 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -30,7 +32,6 @@
 		E8D631CF14BEF5A300497732 /* IPGWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPGWAppDelegate.h; sourceTree = "<group>"; };
 		E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPGWAppDelegate.m; sourceTree = "<group>"; };
 		E8D631D314BEF5A300497732 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = ipgw.icns; path = ../ipgw.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +85,11 @@
 		E8D631C314BEF5A300497732 /* IPGateway */ = {
 			isa = PBXGroup;
 			children = (
+				6CEE81931B284D8E00EA3D62 /* IPGateway.entitlements */,
 				E8D631CF14BEF5A300497732 /* IPGWAppDelegate.h */,
 				E8D631D014BEF5A300497732 /* IPGWAppDelegate.m */,
 				E8D631D214BEF5A300497732 /* MainMenu.xib */,
+				6CEE81941B284E8400EA3D62 /* Images.xcassets */,
 				E8D631C414BEF5A300497732 /* Supporting Files */,
 			);
 			path = IPGateway;
@@ -95,7 +98,6 @@
 		E8D631C414BEF5A300497732 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E8F9B30614DBBBD9002EAFD0 /* ipgw.icns */,
 				E8D631C514BEF5A300497732 /* IPGateway-Info.plist */,
 				E8D631C614BEF5A300497732 /* InfoPlist.strings */,
 				E8D631C914BEF5A300497732 /* main.m */,
@@ -131,11 +133,16 @@
 		E8D631B014BEF5A300497732 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Peking University";
 				TargetAttributes = {
 					E8D631B814BEF5A300497732 = {
 						DevelopmentTeam = RAE237RSGC;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -164,9 +171,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8D631C814BEF5A300497732 /* InfoPlist.strings in Resources */,
+				6CEE81951B284E8400EA3D62 /* Images.xcassets in Resources */,
 				E8D631CE14BEF5A300497732 /* Credits.rtf in Resources */,
 				E8D631D414BEF5A300497732 /* MainMenu.xib in Resources */,
-				E8F9B30714DBBBD9002EAFD0 /* ipgw.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +235,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -264,6 +272,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -281,6 +290,9 @@
 		E8D631D814BEF5A300497732 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IPGateway/IPGateway.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IPGateway/IPGateway-Prefix.pch";
@@ -294,6 +306,9 @@
 		E8D631D914BEF5A300497732 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = IPGateway/IPGateway.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IPGateway/IPGateway-Prefix.pch";
