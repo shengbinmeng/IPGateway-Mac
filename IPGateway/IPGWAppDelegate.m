@@ -37,6 +37,9 @@
     if ([useridTextField stringValue] != nil && [[useridTextField stringValue] isEqualToString:@""] == NO && [passwordTextField stringValue] != nil && [[passwordTextField stringValue] isEqualToString:@""] == NO) {
         [self loginButtonPressed:nil];
     }
+    
+    
+    int test = 0;
 }
 
 
@@ -238,9 +241,9 @@
         NSLog(@"information: **************\n%@",information);
 #endif
         if([[information substringToIndex:11] isEqualToString:@"SUCCESS=YES"]){
-            NSRange range = [content rangeOfString:@"用&nbsp;户&nbsp;名："];
-            NSString *name = [content substringWithRange:NSMakeRange(range.location + range.length + 9, 12)];
-            name = [name substringToIndex:[name rangeOfString:@"</td>"].location];
+            NSRange range = [content rangeOfString:@"USERNAME="];
+            NSString *name = [content substringWithRange:NSMakeRange(range.location + range.length, 10)];
+            //name = [name substringToIndex:[name rangeOfString:@"</td>"].location];
             
             NSString *IP = [self findItem:@"IP" ofInfomation:information];
             NSString *scope = [self findItem:@"SCOPE" ofInfomation:information];
@@ -251,7 +254,7 @@
             NSString *status = @"Normal";
             if (![fr_desc isEqualToString:@"no"]) {
                 NSString *fr_time = [self findItem:@"FR_TIME" ofInfomation:information];
-                status = [NSString stringWithFormat:@"%@ \n%@: %@ hours", fr_desc, @"Time Used", fr_time];
+                status = [NSString stringWithFormat:@"%@ \n%@: %@", fr_desc, @"Time Used", fr_time];
             }
             if ([scope isEqualToString:@"international"]) {
                 scope = @"Global Paid";
